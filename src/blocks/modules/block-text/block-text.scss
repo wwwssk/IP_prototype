@@ -1,0 +1,37 @@
+.text-block {
+	h1 {
+		font-family: 'Source Serif Pro';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 40px;
+		color: #000000;
+	}
+
+	h2,
+	p {
+		font-family: 'Styrene A LC Web';
+		font-style: normal;
+		font-size: 18px;
+		line-height: 26px;
+		color: #000000;
+	}
+
+	h2 {
+		font-weight: 700;
+	}
+
+	p {
+		font-weight: 400;
+	}
+
+	ul {
+		li {
+			font-family: 'Styrene A LC Web';
+			font-style: normal;
+			font-size: 18px;
+			line-height: 26px;
+			color: #000000;
+		}
+	}
+}
