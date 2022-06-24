@@ -444,7 +444,8 @@ ul {
 }
 
 .text-block h2,
-.text-block p {
+.text-block p,
+.text-block li {
   font-family: "Styrene A LC Web";
   font-style: normal;
   font-size: 18px;
@@ -461,10 +462,6 @@ ul {
 }
 
 .text-block ul li {
-  font-family: "Styrene A LC Web";
-  font-style: normal;
-  font-size: 18px;
-  line-height: 26px;
-  color: #000000;
+  font-weight: 400;
 }
 /*# sourceMappingURL=maps/main.css.map */

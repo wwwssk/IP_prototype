@@ -9,7 +9,8 @@
 	}
 
 	h2,
-	p {
+	p,
+	li {
 		font-family: 'Styrene A LC Web';
 		font-style: normal;
 		font-size: 18px;
@@ -27,11 +28,7 @@
 
 	ul {
 		li {
-			font-family: 'Styrene A LC Web';
-			font-style: normal;
-			font-size: 18px;
-			line-height: 26px;
-			color: #000000;
+			font-weight: 400;
 		}
 	}
 }
