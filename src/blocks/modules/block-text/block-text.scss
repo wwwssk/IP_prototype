@@ -1,4 +1,9 @@
 .text-block {
+	width: 1182px;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-top: 54px;
+	padding-bottom: 78px;
 	h1 {
 		font-family: 'Source Serif Pro';
 		font-style: normal;
@@ -19,16 +24,27 @@
 	}
 
 	h2 {
+		margin-top: 26px;
 		font-weight: 700;
+		&:nth-child(2){
+			margin-top: 61px;
+		}
 	}
 
 	p {
+		margin-top: 26px;
+		margin-bottom: 0;
 		font-weight: 400;
 	}
 
 	ul {
+		margin-top: 27px;
 		li {
+			margin-left: 30px;
 			font-weight: 400;
+			&:not(:first-child) {
+				margin-top: 18px;
+			}
 		}
 	}
 }
