@@ -5,8 +5,16 @@
 	z-index: 9;
 	top: 190px;
 	right: 96px;
+	@media (max-width: 1900px){
+		width: 21.579vw;
+		top: 10vw;
+		right: 5.053vw;
+	}
 	&__container {
 		padding: 30px 25px 31px;
+		@media (max-width: 1900px){
+			padding: 1.579vw 1.316vw 1.632vw; 
+		}
 	}
 	
 		&__calendar {
@@ -14,9 +22,18 @@
 			&-wrapper {
 				border-bottom: 1px solid #000000;
 				padding-bottom: 40px;
+				@media (max-width: 1900px){
+					border-bottom: 0.053vw solid #000000;
+					padding-bottom: 2.105vw;
+				}
 			}
 			img {
 				margin-right: 22px;
+				@media (max-width: 1900px){
+					margin-right: 1.158vw;
+					width: 3.526vw;
+					height: 3.789vw;
+				}
 			}
 		}
 	
@@ -28,6 +45,10 @@
 			line-height: 30px;
 			color: #000000;
 			text-transform: lowercase;
+			@media (max-width: 1900px){
+				font-size: 1.263vw;
+				line-height: 1.579vw;
+			}
 		}
 		
 	
@@ -46,6 +67,12 @@
 			padding: 9px 10px 9px 14px;
 			text-transform: lowercase;
 			transition: all 0.3s ease 0s;
+			@media (max-width: 1900px){
+				font-size: 0.842vw;
+				line-height: 1.053vw;
+				margin-top: 1vw;
+				padding: 0.474vw 0.526vw 0.474vw 0.737vw;
+			}
 			&:hover{
 				background: #CFEDFF;
 			}
@@ -58,20 +85,38 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				@media (max-width: 1900px){
+					width: 1.842vw;
+					height: 1.842vw;
+					border: 0.053vw solid #000000;
+					img {
+						width: 0.789vw;
+						height: 0.789vw;
+					}
+				}
 			}
 		}
 		
 		&__tel {
 			margin-top: 40px;
+			@media (max-width: 1900px){
+				margin-top: 2.105vw;
+			}
 			&--link {}
 		}
 		&__email {
 			margin-top: 40px;
+			@media (max-width: 1900px){
+				margin-top: 2.105vw;
+			}
 			&--link {}
 		}
 	
 		&__maps {
 			margin-top: 40px;
+			@media (max-width: 1900px){
+				margin-top: 2.105vw;
+			}
 			&--link {}
 		}
 }
