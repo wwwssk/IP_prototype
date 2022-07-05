@@ -55,3 +55,14 @@
 	font-style: normal;
 	font-display: swap;
 }
+@font-face {
+	font-family: 'Styrene A LC';
+	src: url('../fonts/StyreneAWeb_Regular/StyreneAWeb_Regular.eot');
+	src: local('StyreneAWeb_Regular'), local('../fonts/StyreneAWeb_Regular/StyreneAWeb_Regular'),
+		url('../fonts/StyreneAWeb_Regular/StyreneAWeb_Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/StyreneAWeb_Regular/StyreneAWeb_Regular.woff') format('woff'),
+		url('../fonts/StyreneAWeb_Regular/StyreneAWeb_Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}

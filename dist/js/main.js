@@ -17,14 +17,62 @@
   \*********************************************/
 /***/ (function() {
 
+$(document).ready(function () {
+  $('.header__man').click(function (event) {
+    $('.login-header').toggleClass('active');
+  });
+  $(document).click(function (e) {
+    var login = $(".login-header, .header__man");
 
+    if (!login.is(e.target) && login.has(e.target).length === 0) {
+      login.removeClass('active');
+    }
+  });
+});
 
 /***/ }),
 
-/***/ "./src/js/import/components.js":
-/*!*************************************!*\
-  !*** ./src/js/import/components.js ***!
-  \*************************************/
+/***/ "./src/blocks/modules/menu/menu.js":
+/*!*****************************************!*\
+  !*** ./src/blocks/modules/menu/menu.js ***!
+  \*****************************************/
+/***/ (function() {
+
+$(document).ready(function () {
+  $('.menu__item--click').click(function (event) {
+    $(this).toggleClass('active').next().slideToggle(300);
+  });
+  var philosophi = document.querySelector('.philosophi-block');
+
+  if (philosophi) {
+    $('.philosophi-link, .bureau-item').addClass('active-menu');
+  }
+
+  var offices = document.querySelector('.offices');
+
+  if (offices) {
+    $('.offices-link, .bureau-item').addClass('active-menu');
+  }
+
+  var people = document.querySelector('.people');
+
+  if (people) {
+    $('.people-link').addClass('active-menu');
+  }
+
+  var docs = document.querySelector('.docs');
+
+  if (docs) {
+    $('.docs-link').addClass('active-menu');
+  }
+});
+
+/***/ }),
+
+/***/ "./src/blocks/modules/sidebar/sidebar.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/modules/sidebar/sidebar.js ***!
+  \***********************************************/
 /***/ (function() {
 
 
@@ -43,8 +91,111 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_header_header__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/footer/footer */ "./src/blocks/modules/footer/footer.js");
 /* harmony import */ var _modules_footer_footer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_footer_footer__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_menu_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/menu/menu */ "./src/blocks/modules/menu/menu.js");
+/* harmony import */ var _modules_menu_menu__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_menu_menu__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_sidebar_sidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/sidebar/sidebar */ "./src/blocks/modules/sidebar/sidebar.js");
+/* harmony import */ var _modules_sidebar_sidebar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_sidebar_sidebar__WEBPACK_IMPORTED_MODULE_3__);
 
 
+
+
+
+/***/ }),
+
+/***/ "./src/js/import/pages/login.js":
+/*!**************************************!*\
+  !*** ./src/js/import/pages/login.js ***!
+  \**************************************/
+/***/ (function() {
+
+var togglePassword = document.querySelector('.form-login__eye');
+var password = document.querySelector('.form-login__input-password');
+
+if (togglePassword) {
+  togglePassword.addEventListener('click', function (e) {
+    var type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    this.classList.toggle('active');
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/import/pages/pages.js":
+/*!**************************************!*\
+  !*** ./src/js/import/pages/pages.js ***!
+  \**************************************/
+/***/ (function() {
+
+//RADIO
+$(document).ready(function () {
+  $.each($('.radiobuttons__item'), function (index, val) {
+    if ($(this).find('input').prop('checked') == true) {
+      $(this).addClass('active');
+    }
+  });
+  $(document).on('click', '.radiobuttons__item', function (event) {
+    $(this).parents('.radiobuttons').find('.radiobuttons__item').removeClass('active');
+    $(this).parents('.radiobuttons').find('.radiobuttons__item input').prop('checked', false);
+    $(this).toggleClass('active');
+    $(this).find('input').prop('checked', true);
+    return false;
+  });
+}); //select
+
+var selectSingle1 = document.querySelector('.select1');
+var selectSingle1_title = selectSingle1.querySelector('.select1--title');
+var selectSingle1_labels = selectSingle1.querySelectorAll('.select1--label');
+selectSingle1_title.addEventListener('click', function () {
+  if ('active' === selectSingle1.getAttribute('data-state')) {
+    selectSingle1.setAttribute('data-state', '');
+  } else {
+    selectSingle1.setAttribute('data-state', 'active');
+  }
+});
+
+for (var i = 0; i < selectSingle1_labels.length; i++) {
+  selectSingle1_labels[i].addEventListener('click', function (evt) {
+    selectSingle1_title.textContent = evt.target.textContent;
+    selectSingle1.setAttribute('data-state', '');
+  });
+}
+
+var selectSingle2 = document.querySelector('.select2');
+var selectSingle2_title = selectSingle2.querySelector('.select2--title');
+var selectSingle2_labels = selectSingle2.querySelectorAll('.select2--label');
+selectSingle2_title.addEventListener('click', function () {
+  if ('active' === selectSingle2.getAttribute('data-state')) {
+    selectSingle2.setAttribute('data-state', '');
+  } else {
+    selectSingle2.setAttribute('data-state', 'active');
+  }
+});
+
+for (var _i = 0; _i < selectSingle2_labels.length; _i++) {
+  selectSingle2_labels[_i].addEventListener('click', function (evt) {
+    selectSingle2_title.textContent = evt.target.textContent;
+    selectSingle2.setAttribute('data-state', '');
+  });
+}
+
+var selectSingle_offices = document.querySelector('.select-offices');
+var selectSingle_offices_title = selectSingle_offices.querySelector('.select-offices--title');
+var selectSingle_offices_labels = selectSingle_offices.querySelectorAll('.select-offices--label');
+selectSingle_offices_title.addEventListener('click', function () {
+  if ('active' === selectSingle_offices.getAttribute('data-state')) {
+    selectSingle_offices.setAttribute('data-state', '');
+  } else {
+    selectSingle_offices.setAttribute('data-state', 'active');
+  }
+});
+
+for (var _i2 = 0; _i2 < selectSingle_offices_labels.length; _i2++) {
+  selectSingle_offices_labels[_i2].addEventListener('click', function (evt) {
+    selectSingle_offices_title.textContent = evt.target.textContent;
+    selectSingle_offices.setAttribute('data-state', '');
+  });
+}
 
 /***/ })
 
@@ -124,9 +275,12 @@ var __webpack_exports__ = {};
   !*** ./src/js/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
-/* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/components */ "./src/js/import/components.js");
-/* harmony import */ var _import_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_import_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _import_pages_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/pages/login */ "./src/js/import/pages/login.js");
+/* harmony import */ var _import_pages_login__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_import_pages_login__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
+/* harmony import */ var _import_pages_pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./import/pages/pages */ "./src/js/import/pages/pages.js");
+/* harmony import */ var _import_pages_pages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_import_pages_pages__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 }();

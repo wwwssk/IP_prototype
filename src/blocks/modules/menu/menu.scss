@@ -1,0 +1,116 @@
+.menu {
+	position: relative;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 395px;
+	min-height: 100%;
+	background-color: #ffffff;
+	flex: 0 0 395px;
+	&__container {
+		margin-left: auto;
+		padding: 50px 20px 50px 95px;
+		overflow: auto;
+	}
+
+		&__logo {
+			display: flex;
+			img {
+				width: 64px;
+				height: 32px;
+				position: relative;
+				top: 8px;
+			}
+			span {
+				width: 172px;
+				margin-left: 20px;
+				display: inline-block;
+				font-family: 'Styrene A LC Web';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 23px;
+				color: #000000;
+			}
+		}
+	
+		&__list {
+			margin-top: 94px;
+		}
+	
+		&__item {
+			&:not(:first-child) {
+				margin-top: 3px;
+			}
+			&--click {
+				cursor: pointer;
+				font-family: 'Source Serif Pro';
+				font-style: normal;
+				font-weight: 600;
+				font-size: 24px;
+				line-height: 45px;
+				display: flex;
+				align-items: center;
+				text-transform: lowercase;
+				color: #000000;
+				border-bottom: 1px solid #F04E00;
+				position: relative;
+				transition: all 0.3s ease 0s;
+				&:hover{
+					opacity: 0.7;
+				}
+				&::after{
+					content:'';
+					position: absolute;
+					top: 50%;
+					right: 10px;
+					width: 6px;
+					height: 14px;
+					transform: translate(0, -50%);
+					background: url('../img/svg/arrow.svg') 0 0 / 100% 100% no-repeat;
+					transition: all 0.5s ease 0s;
+				}
+				&.active {
+					&::after{
+						transform: translate(0, -50%) rotate(90deg);
+					}
+				}
+				&-uppercase {
+					text-transform: uppercase;
+				}
+			}
+			a.menu__item--click {
+				&::after{
+					display: none;
+				}
+			}
+			.submenu__list {
+				display: none;
+				margin-top: 10px;
+			}
+			
+				.submenu__item {
+					
+				}
+			
+					.submenu__link {
+						font-family: 'Styrene A LC Web';
+						font-style: normal;
+						font-weight: 400;
+						font-size: 18px;
+						line-height: 34px;
+						display: flex;
+						align-items: center;
+						text-transform: lowercase;
+						color: #000000;
+						transition: all 0.3s ease 0s;
+						padding: 5px 0px 5px 10px;
+						&:hover{
+							background: #CFEDFF;
+						}
+					}
+		}
+
+}
+
+
