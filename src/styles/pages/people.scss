@@ -1,3 +1,4 @@
+
 .select1 {
 	position: relative;
 	width: 345px;
@@ -1061,4 +1062,25 @@ font-family: 'Styrene A LC Web';
 				}
 		}
 }
-
+.fancybox__button--zoom, .fancybox__button--fullscreen {
+	display: none!important;
+}
+.-select- {
+	label {
+		font-size: 16px!important;
+		line-height: 26px!important;
+		@media (max-width: 1900px){
+			font-size: 0.84vw!important;
+			line-height: 1.37vw!important;
+		}
+	}
+/* 	.select1--content {
+		overflow: auto;
+		width: 608px;
+		height: 445px;
+		@media (max-width: 1900px){
+			width: 32vw;
+			height: 23.42vw;
+		}
+	} */
+}

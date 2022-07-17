@@ -102,6 +102,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/import/pages/calendar.js":
+/*!*****************************************!*\
+  !*** ./src/js/import/pages/calendar.js ***!
+  \*****************************************/
+/***/ (function() {
+
+$(function () {
+  var $datepicker = $('.js-datepicker');
+  var datepicker = $datepicker.datepicker({
+    autoClose: false,
+    classes: 'datepicker__calendar',
+    position: 'bottom center',
+    offset: 22,
+    range: true,
+    multipleDatesSeparator: '  '
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/import/pages/login.js":
 /*!**************************************!*\
   !*** ./src/js/import/pages/login.js ***!
@@ -278,8 +298,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _import_pages_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/pages/login */ "./src/js/import/pages/login.js");
 /* harmony import */ var _import_pages_login__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_import_pages_login__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _import_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./import/modules */ "./src/js/import/modules.js");
-/* harmony import */ var _import_pages_pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./import/pages/pages */ "./src/js/import/pages/pages.js");
-/* harmony import */ var _import_pages_pages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_import_pages_pages__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _import_pages_calendar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./import/pages/calendar */ "./src/js/import/pages/calendar.js");
+/* harmony import */ var _import_pages_calendar__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_import_pages_calendar__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _import_pages_pages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./import/pages/pages */ "./src/js/import/pages/pages.js");
+/* harmony import */ var _import_pages_pages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_import_pages_pages__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
