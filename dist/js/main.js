@@ -119,6 +119,143 @@ $(function () {
     multipleDatesSeparator: '  '
   });
 });
+/* var swiper2 = new Swiper(".swiper-offices-calendar", {
+	pagination: {
+		el: ".select-offices--content-pagination",
+		clickable: true,
+	},
+	speed: 1000,
+	effect: 'fade',
+	thumbs: {
+		swiper: swiper,
+	},
+});
+var swiper = new Swiper(".select-offices--title", {
+	watchSlidesProgress: true,
+}); */
+
+var swiper = new Swiper(".swiper-offices-calendar", {
+  slidesPerView: 1,
+  watchSlidesProgress: true,
+  allowTouchMove: false,
+
+  /* 	speed: 500,
+   */
+  effect: 'fade'
+});
+var swiper2 = new Swiper(".select-offices--title", {
+  thumbs: {
+    swiper: swiper
+  },
+
+  /* 	speed: 500,
+   */
+  effect: 'fade',
+  pagination: {
+    el: ".select-offices--content-pagination",
+    clickable: true
+  },
+  allowTouchMove: false
+});
+var swiper2 = new Swiper(".meeting-rooms__swiper-mosk", {
+  /* 	speed: 500,
+   */
+  effect: 'fade',
+  pagination: {
+    el: ".meeting-rooms-mosk-pagination",
+    clickable: true
+  },
+  allowTouchMove: false
+});
+var swiper2 = new Swiper(".meeting-rooms__swiper-pit", {
+  /* 	speed: 500,
+   */
+  effect: 'fade',
+  pagination: {
+    el: ".meeting-rooms-pit-pagination",
+    clickable: true
+  },
+  allowTouchMove: false
+});
+var swiper2 = new Swiper(".calendar__swiper-inner1", {
+  /* 	speed: 500,
+   */
+  effect: 'fade',
+  navigation: {
+    nextEl: ".calendar-slide__next1",
+    prevEl: ".calendar-slide__prev1"
+  }
+});
+$(function () {
+  $(".select-offices--title").click(function () {
+    $(".select-offices").toggleClass("active");
+    $('.select-offices--content').toggleClass("active");
+  });
+  $(".swiper-pagination-bullet").click(function () {
+    $(".select-offices").removeClass("active");
+    $('.select-offices--content').removeClass("active");
+  });
+});
+$(document).click(function (e) {
+  var login = $(".select-offices");
+
+  if (!login.is(e.target) && login.has(e.target).length === 0) {
+    $(".select-offices, .select-offices--content").removeClass('active');
+  }
+});
+/*
+$(document).ready(function(){
+   $("#confirmed-hover-block1").mousemove(function (pos) {
+		$("#confirmed-block1").show(300);
+		$("#confirmed-block1").css('left',(pos.pageX+40)+'px').css('top',(pos.pageY+40)+'px');          
+	}).mouseleave(function() {
+		$("#confirmed-block1").hide(300); 
+	});
+});
+*/
+
+/* $(document).ready(function(){
+   $("#waiting-hover-block1").mousemove(function (pos) { 
+		$("#waiting-block1").show(300);
+		$("#waiting-block1").css('left',(pos.pageX+40)+'px').css('top',(pos.pageY+40)+'px');          
+	}).mouseleave(function() {
+		$("#waiting-block1").hide(300); 
+	});
+}); */
+
+$(function () {
+  $(".hover-block").mouseover(function () {
+    $(this).addClass('active');
+  });
+  $(".hover-block").mouseout(function () {
+    $(this).removeClass('active');
+  });
+});
+$(function () {
+  $(".calendar-slide__item").click(function () {
+    if (!$(".hover-block").hasClass('active')) {
+      $(".calendar-slide__item").removeClass('active');
+      $(this).addClass('active');
+    }
+  });
+  /* 	$(".calendar-slide__item").click(function() {
+  		$(".calendar-slide__item").removeClass('active');
+  		$(this).addClass('active');
+  	}); */
+
+  /* 	$(".hover-block").click(function() {
+  		if (!$(".calendar-slide__item").hasClass('active')) {
+  			$(".calendar-slide__item").removeClass('active');   
+  		}
+  	});  */
+});
+$(document).click(function (e) {
+  var calendar = $(".calendar-slide__item");
+
+  if (!calendar.is(e.target) && calendar.has(e.target).length === 0) {
+    $(".calendar-slide__item").removeClass('active');
+  }
+});
 
 /***/ }),
 
@@ -147,6 +284,8 @@ if (togglePassword) {
   \**************************************/
 /***/ (function() {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //RADIO
 $(document).ready(function () {
   $.each($('.radiobuttons__item'), function (index, val) {
@@ -163,59 +302,111 @@ $(document).ready(function () {
   });
 }); //select
 
-var selectSingle1 = document.querySelector('.select1');
-var selectSingle1_title = selectSingle1.querySelector('.select1--title');
-var selectSingle1_labels = selectSingle1.querySelectorAll('.select1--label');
-selectSingle1_title.addEventListener('click', function () {
-  if ('active' === selectSingle1.getAttribute('data-state')) {
-    selectSingle1.setAttribute('data-state', '');
-  } else {
-    selectSingle1.setAttribute('data-state', 'active');
-  }
-});
-
-for (var i = 0; i < selectSingle1_labels.length; i++) {
-  selectSingle1_labels[i].addEventListener('click', function (evt) {
-    selectSingle1_title.textContent = evt.target.textContent;
-    selectSingle1.setAttribute('data-state', '');
+$(document).ready(function () {
+  var selectSingle1 = document.querySelector('.select1');
+  var selectSingle1_title = selectSingle1.querySelector('.select1--title');
+  var selectSingle1_labels = selectSingle1.querySelectorAll('.select1--label');
+  selectSingle1_title.addEventListener('click', function () {
+    if ('active' === selectSingle1.getAttribute('data-state')) {
+      selectSingle1.setAttribute('data-state', '');
+    } else {
+      selectSingle1.setAttribute('data-state', 'active');
+    }
   });
-}
 
-var selectSingle2 = document.querySelector('.select2');
-var selectSingle2_title = selectSingle2.querySelector('.select2--title');
-var selectSingle2_labels = selectSingle2.querySelectorAll('.select2--label');
-selectSingle2_title.addEventListener('click', function () {
-  if ('active' === selectSingle2.getAttribute('data-state')) {
-    selectSingle2.setAttribute('data-state', '');
-  } else {
-    selectSingle2.setAttribute('data-state', 'active');
+  for (var i = 0; i < selectSingle1_labels.length; i++) {
+    selectSingle1_labels[i].addEventListener('click', function (evt) {
+      selectSingle1_title.textContent = evt.target.textContent;
+      selectSingle1.setAttribute('data-state', '');
+    });
   }
-});
 
-for (var _i = 0; _i < selectSingle2_labels.length; _i++) {
-  selectSingle2_labels[_i].addEventListener('click', function (evt) {
-    selectSingle2_title.textContent = evt.target.textContent;
-    selectSingle2.setAttribute('data-state', '');
+  var selectSingle2 = document.querySelector('.select2');
+  var selectSingle2_title = selectSingle2.querySelector('.select2--title');
+  var selectSingle2_labels = selectSingle2.querySelectorAll('.select2--label');
+  selectSingle2_title.addEventListener('click', function () {
+    if ('active' === selectSingle2.getAttribute('data-state')) {
+      selectSingle2.setAttribute('data-state', '');
+    } else {
+      selectSingle2.setAttribute('data-state', 'active');
+    }
   });
-}
 
-var selectSingle_offices = document.querySelector('.select-offices');
-var selectSingle_offices_title = selectSingle_offices.querySelector('.select-offices--title');
-var selectSingle_offices_labels = selectSingle_offices.querySelectorAll('.select-offices--label');
-selectSingle_offices_title.addEventListener('click', function () {
-  if ('active' === selectSingle_offices.getAttribute('data-state')) {
-    selectSingle_offices.setAttribute('data-state', '');
-  } else {
-    selectSingle_offices.setAttribute('data-state', 'active');
+  for (var _i = 0; _i < selectSingle2_labels.length; _i++) {
+    selectSingle2_labels[_i].addEventListener('click', function (evt) {
+      selectSingle2_title.textContent = evt.target.textContent;
+      selectSingle2.setAttribute('data-state', '');
+    });
   }
-});
 
-for (var _i2 = 0; _i2 < selectSingle_offices_labels.length; _i2++) {
-  selectSingle_offices_labels[_i2].addEventListener('click', function (evt) {
-    selectSingle_offices_title.textContent = evt.target.textContent;
-    selectSingle_offices.setAttribute('data-state', '');
+  var selectSingle_offices = document.querySelector('.select-offices');
+  var selectSingle_offices_title = selectSingle_offices.querySelector('.select-offices--title');
+  var selectSingle_offices_labels = selectSingle_offices.querySelectorAll('.select-offices--label');
+  selectSingle_offices_title.addEventListener('click', function () {
+    if ('active' === selectSingle_offices.getAttribute('data-state')) {
+      selectSingle_offices.setAttribute('data-state', '');
+    } else {
+      selectSingle_offices.setAttribute('data-state', 'active');
+    }
   });
-}
+
+  for (var _i2 = 0; _i2 < selectSingle_offices_labels.length; _i2++) {
+    selectSingle_offices_labels[_i2].addEventListener('click', function (evt) {
+      selectSingle_offices_title.textContent = evt.target.textContent;
+      selectSingle_offices.setAttribute('data-state', '');
+    });
+  }
+}); //MAP
+
+/* Landing page scripts */
+
+/*$(document).ready(function() {
+	$('.usage').click(function(e) {
+		e.preventDefault();
+		$('.editor-window').slideToggle(200);
+	});
+
+	$(document).on('mousemove', '.mapplic-layer', function(e) {
+		var map = $('.mapplic-map'),
+			x = (e.pageX - map.offset().left) / map.width(),
+			y = (e.pageY - map.offset().top) / map.height();
+		$('.mapplic-coordinates-x').text(parseFloat(x).toFixed(4));
+		$('.mapplic-coordinates-y').text(parseFloat(y).toFixed(4));
+	});
+
+	$('.editor-window .window-mockup').click(function() {
+		$('.editor-window').slideUp(200);
+	});
+});*/
+
+jQuery(function () {
+  var _$$mapplic;
+
+  var css = '.mapplic-filtered svg [id^=landmark] > * {opacity: 1 !important; }';
+  var map = $('#mapplic').mapplic((_$$mapplic = {
+    source: '/jslibs/mall.json',
+    customcss: css,
+    sidebar: true,
+    sidebartoggle: true,
+    alphabetic: true,
+    height: 560,
+    developer: true,
+    searchdescription: true,
+    searcheverywhere: true,
+    animations: true,
+    minimap: false,
+    marker: 'hidden',
+    fillcolor: false,
+    fullscreen: false
+  }, _defineProperty(_$$mapplic, "developer", false), _defineProperty(_$$mapplic, "thumbholder", true), _defineProperty(_$$mapplic, "maxscale", 3), _$$mapplic));
+  Fancybox.bind("[data-fancy-map]", {
+    on: {
+      reveal: function reveal(fancybox, slide) {
+        $('#mapplic').trigger('resize');
+      }
+    }
+  });
+});
 
 /***/ })
 
